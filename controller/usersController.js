@@ -18,7 +18,7 @@ export const register = async (req, res)=>{
     if (err) {
       return console.log(err.message);
     }
-    if(row != undefined) {
+    if(row != undefined && row.length >=1) {
       console.log("return" +row)
       return res.status(400).json({success: false, msg:`user already exist with mail ID ${input.email}!`});
     }
