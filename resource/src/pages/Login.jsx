@@ -22,7 +22,7 @@ const Login = () => {
     <Wrapper>
       <Form method='post' className='form'>
         <Logo />
-        <h4>Login to Work Tracker</h4>
+        <h4>Login</h4>
         <FormRow type='email' name='email' />
         <FormRow type='password' name='password' />
         <SubmitBtn />

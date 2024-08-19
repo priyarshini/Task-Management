@@ -2,7 +2,7 @@ import { verifyJWT } from '../utils/tokenUtils.js';
 
 export const authenticateUser = (req, res, next) => {
   const { token } = req.cookies;
-  if (!token) return res.status(403).json({status: false, msg:'authentication invalid'});
+  if (!token) return res.status(403).json({status: false, msg:'Authentication Invalid'});
   try {
     const data = verifyJWT(token);
     req.user = data;

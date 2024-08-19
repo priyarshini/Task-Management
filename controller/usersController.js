@@ -41,13 +41,16 @@ export const login = async (req, res)=>{
 
     const input = {...req.body};
 
+    console.log("came to login")
     db.each(userSelectByEmail,[input.email], async function(err,row) {
       if (err) {
-        return console.log(err.message);
+        console.log(err.message);
+        return res.status(403).json({ success: false, msg: `Account doesn't exist!`});
       }
-      console.log(row)
+      console.log("Account exist! ",row)
+      console.log(row.hashPassword)
       const validatePassword =  await comparePassword(input.password, row.hashPassword)
-      if (!validatePassword) return res.status(403).json({ success: false, msg: `invalid credentials`});
+      if (!validatePassword) return res.status(403).json({ success: false, msg: `Invalid Credentials`});
       else {  
         const token = createJWT({ userId: row.id});
 
