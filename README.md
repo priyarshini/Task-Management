@@ -16,3 +16,10 @@ npm run setup-project
 ```sh
 npm run dev
 ```
+
+### SQLite DB Scheme 
+
+![image](https://github.com/user-attachments/assets/36962278-93eb-40f9-a1a1-cee766e36ec8)
+
+
+
