@@ -12,7 +12,9 @@ export const action = async ({ request }) => {
       toast.success('Login successful');
       return redirect('/dashboard');
     } catch (error) {
+      console.log(error)
       toast.error(error?.response?.data?.msg);
+      return redirect('/login');
       return error;
     }
   };

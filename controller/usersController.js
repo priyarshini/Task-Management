@@ -42,9 +42,12 @@ export const login = async (req, res)=>{
     const input = {...req.body};
 
     console.log("came to login")
-    db.each(userSelectByEmail,[input.email], async function(err,row) {
-      if (err) {
-        console.log(err.message);
+    db.all(userSelectByEmail,[input.email], async function(err,row) {
+      if(row.length>0){
+        row = row[0]
+      }
+      if (err || row.hashPassword == undefined) {
+        console.log(err, row);
         return res.status(403).json({ success: false, msg: `Account doesn't exist!`});
       }
       console.log("Account exist! ",row)
