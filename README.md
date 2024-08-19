@@ -2,7 +2,7 @@
 
 [Work Tracker](https://work-tracker-6znf.onrender.com/)
 
-#### Created React APP using VITE Built Toll
+#### Created React APP using VITE Built Tool
 
 [VITE](https://vitejs.dev/guide/)
 
